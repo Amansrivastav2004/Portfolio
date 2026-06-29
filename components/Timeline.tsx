@@ -1,96 +1,82 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GraduationCap, Briefcase } from "lucide-react";
 
-const education = [
+const timeline = [
   {
-    title: "Master of Computer Applications (MCA)",
     year: "2025 - Present",
-    desc: "Specializing in Software Development, Cloud Computing, and Modern Technologies.",
+    title: "Master of Computer Applications (MCA)",
+    description:
+      "Pursuing MCA with specialization in AI, Data Science, Cloud Computing and Full Stack Development.",
+    icon: GraduationCap,
   },
   {
-    title: "Bachelor of Computer Applications (BCA)",
-    year: "Completed 2025",
-    desc: "Studied Programming, Database Management Systems, Networking, and Software Engineering.",
+    year: "2024",
+    title: "Started AI & Data Science Journey",
+    description:
+      "Learned Python, Machine Learning, OpenCV, and built real-world AI projects.",
+    icon: Briefcase,
   },
   {
-    title: "Intermediate",
-    year: "Completed 2022",
-    desc: "Higher Secondary Education.",
-  },
-  {
-    title: "High School",
-    year: "Completed 2020",
-    desc: "Secondary Education.",
+    year: "2023",
+    title: "Bachelor's Degree Completed",
+    description:
+      "Completed BCA and started building web applications and software projects.",
+    icon: GraduationCap,
   },
 ];
 
 export default function Timeline() {
   return (
     <section
-      id="education"
-      className="py-32 bg-black text-white"
+      id="timeline"
+      className="py-32 bg-slate-950 text-white"
     >
-      <div className="max-w-5xl mx-auto px-8">
+      <div className="max-w-5xl mx-auto px-6">
 
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-5xl font-bold text-center mb-20"
-        >
-          Education Journey
-        </motion.h2>
+        <div className="text-center mb-20">
+          <p className="uppercase tracking-[5px] text-cyan-400">
+            Journey
+          </p>
 
-        <div className="relative border-l-2 border-cyan-500 ml-6">
+          <h2 className="text-5xl font-black mt-4">
+            My Timeline
+          </h2>
+        </div>
 
-          {education.map((item, index) => (
+        <div className="relative border-l-2 border-cyan-500 ml-5">
 
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="mb-12 ml-10 relative"
-            >
+          {timeline.map((item, index) => {
+            const Icon = item.icon;
 
-              <div
-                className="
-                  absolute
-                  -left-[49px]
-                  w-6
-                  h-6
-                  rounded-full
-                  bg-cyan-500
-                "
-              />
-
-              <div
-                className="
-                  bg-white/5
-                  border
-                  border-white/10
-                  rounded-2xl
-                  p-6
-                  backdrop-blur-lg
-                "
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mb-16 ml-10 relative"
               >
+                <div className="absolute -left-[54px] w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center">
+                  <Icon size={22} />
+                </div>
 
-                <p className="text-cyan-400 mb-2">
+                <p className="text-cyan-400 font-bold">
                   {item.year}
                 </p>
 
-                <h3 className="text-2xl font-semibold mb-3">
+                <h3 className="text-2xl font-bold mt-2">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-400">
-                  {item.desc}
+                <p className="text-gray-400 mt-3 leading-7">
+                  {item.description}
                 </p>
 
-              </div>
-
-            </motion.div>
-
-          ))}
+              </motion.div>
+            );
+          })}
 
         </div>
 

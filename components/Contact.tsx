@@ -1,131 +1,135 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+} from "lucide-react";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 bg-black text-white"
+      className="relative py-32 bg-[#020617] text-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-8">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 blur-[120px]" />
 
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-5xl font-bold text-center mb-16"
-        >
-          Contact Me
-        </motion.h2>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
 
-        <div className="grid md:grid-cols-2 gap-12">
+        {/* Heading */}
 
-          {/* Left Side */}
+        <div className="text-center mb-20">
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="uppercase tracking-[6px] text-cyan-400"
+          >
+            Contact
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="mt-4 text-5xl md:text-6xl font-black"
+          >
+            Let's
+            <span className="text-cyan-400"> Connect</span>
+          </motion.h2>
+
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+
+          {/* Left */}
+
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
+            className="space-y-8"
           >
 
-            <h3 className="text-3xl font-semibold mb-6">
-              Let's Connect
-            </h3>
+            <div className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-2xl p-6">
 
-            <p className="text-gray-400 leading-8 mb-8">
-              I'm always interested in discussing new projects,
-              cloud technologies, web development, and exciting
-              opportunities.
-            </p>
-
-            <div className="space-y-6">
-
-              <div className="flex items-center gap-4">
-                <Mail className="text-cyan-400" />
-                <span>srivastavaman274@gmail.com</span>
+              <div className="w-14 h-14 rounded-xl bg-cyan-500 flex items-center justify-center">
+                <Mail />
               </div>
 
-              <div className="flex items-center gap-4">
-                <Phone className="text-cyan-400" />
-                <span>+91 98765 43210</span>
+              <div>
+                <h3 className="font-bold">Email</h3>
+                <p className="text-gray-400">
+                  your@email.com
+                </p>
               </div>
 
-              <div className="flex items-center gap-4">
-                <MapPin className="text-cyan-400" />
-                <span>Mirzapur, Uttar Pradesh</span>
+            </div>
+
+            <div className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-2xl p-6">
+
+              <div className="w-14 h-14 rounded-xl bg-cyan-500 flex items-center justify-center">
+                <Phone />
+              </div>
+
+              <div>
+                <h3 className="font-bold">Phone</h3>
+                <p className="text-gray-400">
+                  +91 XXXXX XXXXX
+                </p>
+              </div>
+
+            </div>
+
+            <div className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-2xl p-6">
+
+              <div className="w-14 h-14 rounded-xl bg-cyan-500 flex items-center justify-center">
+                <MapPin />
+              </div>
+
+              <div>
+                <h3 className="font-bold">Location</h3>
+                <p className="text-gray-400">
+                  India
+                </p>
               </div>
 
             </div>
 
           </motion.div>
 
-          {/* Right Side */}
+          {/* Right */}
+
           <motion.form
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="
-              bg-white/5
-              border
-              border-white/10
-              rounded-3xl
-              p-8
-              backdrop-blur-lg
-            "
+            className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl"
           >
 
             <input
               type="text"
               placeholder="Your Name"
-              className="
-                w-full
-                mb-4
-                p-4
-                rounded-xl
-                bg-black/30
-                border
-                border-white/10
-              "
+              className="w-full p-4 mb-5 rounded-xl bg-slate-900 border border-white/10 outline-none"
             />
 
             <input
               type="email"
               placeholder="Your Email"
-              className="
-                w-full
-                mb-4
-                p-4
-                rounded-xl
-                bg-black/30
-                border
-                border-white/10
-              "
+              className="w-full p-4 mb-5 rounded-xl bg-slate-900 border border-white/10 outline-none"
             />
 
             <textarea
-              rows={5}
+              rows={6}
               placeholder="Your Message"
-              className="
-                w-full
-                mb-4
-                p-4
-                rounded-xl
-                bg-black/30
-                border
-                border-white/10
-              "
+              className="w-full p-4 mb-6 rounded-xl bg-slate-900 border border-white/10 outline-none resize-none"
             />
 
             <button
-              className="
-                bg-cyan-500
-                text-black
-                px-6
-                py-3
-                rounded-xl
-                font-semibold
-                hover:scale-105
-                transition
-              "
+              className="w-full flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-4 rounded-xl transition"
             >
+              <Send size={20} />
               Send Message
             </button>
 

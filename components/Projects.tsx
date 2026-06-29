@@ -5,19 +5,42 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "AI Stock Market Prediction",
+    description:
+      "AI-powered stock market prediction system with live stock prices, machine learning forecasting, interactive charts, and search functionality for any stock.",
+    tech: [
+      "Python",
+      "Machine Learning",
+      "Streamlit",
+      "Pandas",
+      "NumPy",
+      "Plotly",
+      "yFinance",
+    ],
+    color: "from-emerald-500 to-green-700",
+  },
+
+  {
     title: "Online Voting System",
     description:
       "Secure online voting platform with voter authentication, election management, candidate management and real-time result tracking.",
     tech: ["Flutter", "Google Firebase", "Dart"],
     color: "from-cyan-500 to-blue-700",
   },
+
   {
     title: "Person Recognition System",
     description:
       "AI-powered face recognition system using OpenCV and Machine Learning for person identification and attendance management.",
-    tech: ["Flutter", "Google Firebase", "Dart"],
+    tech: [
+      "Python",
+      "OpenCV",
+      "Machine Learning",
+      "SQLite",
+    ],
     color: "from-purple-500 to-pink-700",
   },
+
   {
     title: "Weather App",
     description:
@@ -25,8 +48,20 @@ const projects = [
     tech: ["Next.js", "Tailwind CSS", "Weather API"],
     color: "from-orange-500 to-red-600",
   },
-];
 
+  {
+    title: "Autonomous Science Officer",
+    description:
+      "AI-based geological object detection system using YOLO for autonomous planetary exploration and terrain analysis.",
+    tech: [
+      "Python",
+      "YOLO",
+      "OpenCV",
+      "Artificial Intelligence",
+    ],
+    color: "from-indigo-500 to-violet-700",
+  },
+];
 export default function Projects() {
   return (
     <section
